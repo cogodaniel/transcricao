@@ -1,5 +1,7 @@
 ## Trancrição de Chamadas Usando o Spech-to-text do Google
 
+
+{
 ---
 
 [interno]
@@ -66,5 +68,6 @@ password=Senha8003
 [8003]
 type=aor
 max_contacts=1
+
 
 ---
