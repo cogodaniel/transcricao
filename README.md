@@ -1,5 +1,6 @@
 ## Trancrição de Chamadas Usando o Spech-to-text do Google
 
+```
 [interno]
 exten => _X.,1,NoOp(Chamada para ${EXTEN})
 exten => _X.,n,Set(DATA=${STRFTIME(${EPOCH},,%Y%m%d-%H%M%S)})
@@ -13,9 +14,9 @@ exten => h,1,NoOp(INICIANDO TRANSCRICAO DE CHAMADA)
 exten => h,n,NoOp(TRANSCREVENDO O ARQUIVO ${FILE_NAME}.wav)
 exten => h,n,StopMixMonitor(${MXMON_ID})
 exten => h,n,System(/usr/bin/python3 /var/lib/asterisk/agi-bin/transcricao.py />
+```
 
-
-
+```
 ; =========================
 ; RAMAL 8002
 ; =========================
@@ -63,5 +64,6 @@ password=Senha8003
 [8003]
 type=aor
 max_contacts=1
+```
 
 
