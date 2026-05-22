@@ -11,7 +11,8 @@
 
 ## Passo : Criar conexto
 
-
+Neste contexto, primeramente é criado o parametro para a criação do nome do arquivo, que contem a data e hora e o nome dos ramais que irão participar da gravação. 
+Em seguida é feita a gravação da chjamada com MixMonitor(), quando a chamada é encerrada (h), a gravação é encerrada com SyopMixMonitor(), e em seguida o System() chama o sript que vai fazer a transcrição da chamada e slava na mesma pasta da gravação com o memso noe, porem a extensão é txt. 
 
 ```
 [interno]
@@ -26,7 +27,7 @@ exten => _X.,n,Hangup()
 exten => h,1,NoOp(INICIANDO TRANSCRICAO DE CHAMADA)
 exten => h,n,NoOp(TRANSCREVENDO O ARQUIVO ${FILE_NAME}.wav)
 exten => h,n,StopMixMonitor(${MXMON_ID})
-exten => h,n,System(/usr/bin/python3 /var/lib/asterisk/agi-bin/transcricao.py />
+exten => h,n,System(/usr/bin/python3 /var/lib/asterisk/agi-bin/transcricao.py /var/spool/asterisk/monitor/${FILE_NAME}.wav > /tmp/erro_transcricao.log 2>&1 &)
 ```
 
 ## Passo : Configrar os ramais PJSIP
