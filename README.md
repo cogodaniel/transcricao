@@ -1,4 +1,17 @@
-## Trancrição de Chamadas Usando o Spech-to-text do Google
+# Trancrição de Chamadas Usando o Spech-to-text do Google
+
+
+
+
+## Criar a chave de licença no Google Cloud Platform
+
+## Salvar a chave de licença na pasta
+
+## Instalar o Google Cloud Platform no Debian
+
+## Passo : Criar conexto
+
+
 
 ```
 [interno]
@@ -15,6 +28,11 @@ exten => h,n,NoOp(TRANSCREVENDO O ARQUIVO ${FILE_NAME}.wav)
 exten => h,n,StopMixMonitor(${MXMON_ID})
 exten => h,n,System(/usr/bin/python3 /var/lib/asterisk/agi-bin/transcricao.py />
 ```
+
+## Passo : Configrar os ramais PJSIP
+
+Segue dois exemplode ramais a serem criados no arquivo /etc/astrisk/pjsip.conf
+
 
 ```
 ; =========================
