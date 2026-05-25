@@ -1,4 +1,4 @@
-# Trancrição de Chamadas Usando o Spech-to-text do Google
+# Call Transcrition Using Google STT
 
 
 
