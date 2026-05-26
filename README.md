@@ -4,10 +4,43 @@
 
 
 ## Criar a chave de licença no Google Cloud Platform
+Criar licenças no google cloud para poder utilizar o serviço de STT. 
+
+```
+Passo 1
+Passo 2
+Passo 3
+Passo 4
+Passo 5
+Passo 6
+Passo 7
+Passo 8
+Passo 9
+Passo 10
+Passo 11
+Passo 12
+Passo 13
+```
 
 ## Salvar a chave de licença na pasta
 
+Salvar as credenciais criadas dentro da pasta /opt/google.
+
+```
+mkdir /opt/google
+
+export GOOGLE_APPLICATION_CREDENTIALS="/opt/google/credencial.json"
+
+echo 'GOOGLE_APPLICATION_CREDENTIALS="/opt/google/credencial.json"' >> /etc/environment
+```
+
 ## Instalar o Google Cloud Platform no Debian
+
+Instalar bibliotecas no Debian. 
+
+```
+pip3 install google-cloud-speech pyst2 --break-system-packages
+```
 
 ## Passo : Criar conexto
 
@@ -36,6 +69,15 @@ Segue dois exemplode ramais a serem criados no arquivo /etc/astrisk/pjsip.conf
 
 
 ```
+; =========================
+; TRANSPORT UDP
+; =========================
+
+[transport-udp]
+type=transport
+protocol=udp
+bind=0.0.0.0
+
 ; =========================
 ; RAMAL 8002
 ; =========================
