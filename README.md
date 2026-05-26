@@ -7,19 +7,27 @@
 Criar licenças no google cloud para poder utilizar o serviço de STT. 
 
 ```
-Passo 1
-Passo 2
-Passo 3
-Passo 4
-Passo 5
-Passo 6
-Passo 7
-Passo 8
-Passo 9
-Passo 10
-Passo 11
-Passo 12
-Passo 13
+Passo 1 - Acessar o consiole do Google Cloud - https://console.cloud.google.com
+Passo 2 - Clicar em Selecionar Projeto > Novo Projeto
+Passo 3 - Definir um nome (asterisk-transcricao)
+Passo 4 - Clicar em Criar
+Passo 5 - Ativar Faturamento no Menu Faturamento (somente para habilitar, não será cobrado)
+
+Passo 6 - Abrir a opção Speech-to-Text API 
+Passo 7 - Clicar em Ativar
+
+Passo 8 - Clicar em IAM e Administração > Contas de Serviços
+Passo 9 - Clicar em Criar Conta de Serviço
+Passo 10 - Preencher os Dados Nome: asterisk-stt e ID: asterisk-stt
+Passo 11 - Clicar em Criar e Continuar
+
+Passo 12 - Em permissões Adicione Cloud Speech Client
+Passo 13 - Clique em Contionuar
+
+Passo 14 - Clique em Chaves > Adicionar chave > Criar nova chave  
+Passo 15 - Escolha JSON
+Passo 16 - CLique em Criar
+Passo 17 - Será feito o downlaod de da chave de licença com extensão json
 ```
 
 ## Salvar a chave de licença na pasta
@@ -32,7 +40,28 @@ mkdir /opt/google
 export GOOGLE_APPLICATION_CREDENTIALS="/opt/google/credencial.json"
 
 echo 'GOOGLE_APPLICATION_CREDENTIALS="/opt/google/credencial.json"' >> /etc/environment
+
+systemctl restart asterisk
 ```
+
+## Testar a chave
+
+Caso queira fazer o teste da chave de licença
+
+```
+EXECUTE: python3
+
+EM SEGUIDA:
+from google.cloud import speech
+
+client = speech.SpeechClient()
+
+print("OK")
+
+```
+
+Caso a resposta seja OK, a chave de licença esta correta
+
 
 ## Instalar o Google Cloud Platform no Debian
 
@@ -40,6 +69,19 @@ Instalar bibliotecas no Debian.
 
 ```
 pip3 install google-cloud-speech pyst2 --break-system-packages
+```
+
+## Baixar e salvar o arquivo de Transcrição
+
+Baixe, salve e dê permissão no arquivo de transcrição
+
+```
+git https://github.com/cogodaniel/transcricao
+
+cp transcreve.py /var/lib/asterisk/agi-bin/
+
+chmod +x /var/lib/asterisk/agi-bin/transcreve.py
+chown asterisk:asterisk /var/lib/asterisk/agi-bin/transcreve.py
 ```
 
 ## Passo : Criar conexto
