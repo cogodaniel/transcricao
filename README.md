@@ -1,6 +1,15 @@
-# Call Transcrition Using Google STT
+# Transcrição de Chamadas usando Google STT
 
+Este projeto realiza a gravação e transcrição automática de chamadas telefônicas utilizando o Asterisk, Python e a API Google Cloud Speech-to-Text.
 
+O fluxo funciona da seguinte forma:
+
+1- Um ramal realiza uma chamada para outro ramal através do Asterisk.
+2- O MixMonitor() inicia automaticamente a gravação da chamada em formato .wav.
+3- Quando a chamada é encerrada, o Asterisk executa um script de pós-processamento.
+4- O script em Python envia o arquivo de áudio para a API Google Cloud Speech-to-Text.
+5- O Google processa o áudio e retorna a transcrição da conversa.
+6- A transcrição é salva em um arquivo .txt no servidor.
 
 
 ## Criar a chave de licença no Google Cloud Platform
